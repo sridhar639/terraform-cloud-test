@@ -1,4 +1,4 @@
-module "mys3call" {
+module "mys3call2" {
   source = "./module/s3resource"
 
   bucket_name = var.mybuckname
