@@ -25,7 +25,7 @@ resource "aws_s3_bucket_public_access_block" "s3public" {
 }
 
 resource "aws_s3_bucket_policy" "s3policy" {
-  depends_on = [ aws_s3_bucket_public_access_block.s3public ]
+  depends_on = [ aws_s3_bucket_public_access_block.s3public , aws_s3_bucket_ownership_controls.bucketowner]
   bucket = aws_s3_bucket.mys3.id
 
   policy = <<EOF
